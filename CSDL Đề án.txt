@@ -1,0 +1,58 @@
+use QLLH
+
+db.createCollection("KHOA")
+db.createCollection("KHOAMON")
+db.createCollection("KQUA")
+db.createCollection("LOP")
+db.createCollection("MONHOC")
+db.createCollection("SINHVIEN")
+
+db.KHOA.insertMany([
+    {MAKH: "TT",MAMH: "01",SOTIET: 45},
+    {MAKH: "KT",MAMH: "02",SOTIET: 60},
+    {MAKH: "MT",MAMH: "03",SOTIET: 45},
+    {MAKH: "DC",MAMH: "04",SOTIET: 60}
+])
+
+db.KHOA.insertMany([
+    {MAKH: "TT",TENKH: "Thông tin"},
+    {MAKH: "KT",TENKH: "Khí tượng"},
+    {MAKH: "MT",TENKH: "Môi trường"},
+    {MAKH: "DC",TENKH: "Địa chất"}
+])
+
+db.MONHOC.insertMany([
+    {MAMH: "01",TENMH: "Lập trình căn bản"},
+    {MAMH: "02",TENMH: "Khí tượng vật lý"},
+    {MAMH: "03",TENMH: "Viễn thám cơ bản"},
+    {MAMH: "04",TENMH: "Địa chất đại cương"}
+])
+
+db.LOP.insertMany([
+    {MALOP: "TT01", TENLOP: "09TT2", MAKH: "TT"},
+    {MALOP: "KT02", TENLOP: "09KT3", MAKH: "KT"},
+    {MALOP: "MT03", TENLOP: "09MT4", MAKH: "MT"},
+    {MALOP: "DC04", TENLOP: "09DC1", MAKH: "DC"},
+])
+
+db.KQUA.insertMany([
+	{MASV: "TT0901",MAMH: "01",LANTHI: 1,DIEMTHI: 8},
+	{MASV: "TT0936",MAMH: "01",LANTHI: 1,DIEMTHI: 5},
+	{MASV: "MT0940",MAMH: "02",LANTHI: 1,DIEMTHI: 7},
+	{MASV: "MT0907",MAMH: "02",LANTHI: 1,DIEMTHI: 4},
+	{MASV: "KT0927",MAMH: "03",LANTHI: 1,DIEMTHI: 6},
+	{MASV: "KT0920",MAMH: "03",LANTHI: 1,DIEMTHI: 5},
+	{MASV: "DC0926",MAMH: "04",LANTHI: 1,DIEMTHI: 9},
+	{MASV: "DC0925",MAMH: "04",LANTHI: 1,DIEMTHI: 3},
+])
+
+db.SINHVIEN.insertMany([
+	{MASV: "TT0901", HOSV: "Phạm", TENLOT: "Nguyệt", TENSV: "Ánh", NGSINH: "2002-01-01", DIACHI: "291 Hồ Văn Huê, TP HCM", GIOITINH: "Nữ", MALOP: "TT01"},
+	{MASV: "TT0936", HOSV: "Trần", TENLOT: "Văn", TENSV: "Hào", NGSINH: "2002-03-10", DIACHI: "778 Nguyễn Kiệm, TP HCM", GIOITINH: "Nam", MALOP: "TT01"},
+	{MASV: "MT0940", HOSV: "Đặng", TENLOT: "Bảo", TENSV: "Quang", NGSINH: "2002-05-01", DIACHI: "34 Mai Thị Lự, TP HCM", GIOITINH: "Nam", MALOP: "KT02"},
+	{MASV: "MT0907", HOSV: "Trần", TENLOT: "Quốc", TENSV: "Chiến", NGSINH: "2002-04-30", DIACHI: "95 Bà Rịa, Vũng Tàu", GIOITINH: "Nam", MALOP: "KT02"},
+	{MASV: "KT0927", HOSV: "Nguyễn", TENLOT: "Quyết", TENSV: "Thắng", NGSINH: "2002-11-20", DIACHI: "222 Nguyễn Văn Cừ, TP HCM", GIOITINH: "Nam", MALOP: "MT03"},
+	{MASV: "KT0920", HOSV: "Nguyễn", TENLOT: "Quỳnh", TENSV: "Như", NGSINH: "2002-09-02", DIACHI: "15 Trưng Vương, Hà Nội", GIOITINH: "Nữ", MALOP: "MT03"},
+	{MASV: "DC0926", HOSV: "Trần", TENLOT: "Minh", TENSV: "Thành", NGSINH: "2002-12-25", DIACHI: "332 Nguyễn Thái Học, TP HCM", GIOITINH: "Nam", MALOP: "DC04"},
+	{MASV: "DC0925", HOSV: "Lý", TENLOT: "Thanh", TENSV: "Thảo", NGSINH: "2002-06-05", DIACHI: "80 Lê Hồng Phong, TP HCM", GIOITINH: "Nữ", MALOP: "DC04"},	
+])
