@@ -95,4 +95,10 @@ begin
 	where Lower(SUBSTRING(d.DCHI,CHARINDEX('%[tT][pP]_[hH][cC][mM]%', d.DCHI),LEN(d.DCHI))) = 'tp hcm' 
 	or Lower(SUBSTRING(d.DCHI,CHARINDEX(N'%[hH]ồ%[cC]hí%[mM]inh', d.DCHI),LEN(d.DCHI))) = N'tp hồ chí minh'
 	
-	delete from THANNHAN where THANNHAN.MA_NVIEN in(select manv from deleted)*/
+end*/
+
+/*create trigger xoaNHANTHAN on NHANVIEN
+after delete as
+begin
+	delete from THANNHAN where THANNHAN.MA_NVIEN in (select manv from deleted)
+end*/
