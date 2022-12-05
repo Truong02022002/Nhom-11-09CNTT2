@@ -44,22 +44,31 @@ CREATE TABLE CTHD
 )
 GO
 --I:DINH NGHIA DU LIEU
+--Thêm vào thuộc tính GHICHU có kiểu dữ liệu varchar(20) cho quan hệ SANPHAM.
 ALTER TABLE SANPHAM ADD GHICHU VARCHAR(20)
 GO
+--Thêm vào thuộc tính LOAIKH có kiểu dữ liệu là tinyint cho quan hệ KHACHHANG.
 ALTER TABLE KHACHHANG ADD LOAIKH TINYINT 
 GO
+--Sửa kiểu dữ liệu của thuộc tính GHICHU trong quan hệ SANPHAM thành varchar(100).
 ALTER TABLE SANPHAM ALTER COLUMN GHICHU VARCHAR(100)
 GO
+--Xóa thuộc tính GHICHU trong quan hệ SANPHAM.
 ALTER TABLE SANPHAM DROP COLUMN GHICHU
 GO
+--Làm thế nào để thuộc tính LOAIKH trong quan hệ KHACHHANG có thể lưu các giá trị là: “Vang lai”, “Thuong xuyen”, “Vip”, ...
 ALTER TABLE KHACHHANG ALTER COLUMN LOAIKH VARCHAR(50)
 GO
+--Đơn vị tính của sản phẩm chỉ có thể là (“cay”,”hop”,”cai”,”quyen”,”chuc”)
 ALTER TABLE SANPHAM ADD CONSTRAINT CHECK_DVT CHECK(DVT='cay'OR DVT='cai'OR DVT='hop'OR DVT='quyen'OR DVT='chuc')
 GO
+--Giá bán của sản phẩm từ 500 đồng trở lên.
 ALTER TABLE SANPHAM ADD CONSTRAINT CHECK_GIA CHECK(GIA>=500)
 GO
+--Ngày khách hàng đăng ký là khách hàng thành viên phải lớn hơn ngày sinh của người đó.
 ALTER TABLE KHACHHANG ADD CONSTRAINT CHECK_NGDK CHECK (NGDK>NGSINH)
 GO
+--Nhập Liệu
 insert into KHACHHANG values ('KH01','Nguyen Van A','731,Tran Hung Dao, Q 5 ,Tp HCM','08823451','22/10/1960','22/10/2006',13000000)
 GO
 insert into KHACHHANG values ('KH02','Tran Ngoc Han','23/5, Nguyen Trai, Q 5, Tp HCM','0908256478','03/04/1974','30/07/2006',280000)
