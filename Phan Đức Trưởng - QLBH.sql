@@ -69,223 +69,118 @@ GO
 ALTER TABLE KHACHHANG ADD CONSTRAINT CHECK_NGDK CHECK (NGDK>NGSINH)
 GO
 --Nhập Liệu
-insert into KHACHHANG values ('KH01','Nguyen Van A','731,Tran Hung Dao, Q 5 ,Tp HCM','08823451','22/10/1960','22/10/2006',13000000)
-GO
-insert into KHACHHANG values ('KH02','Tran Ngoc Han','23/5, Nguyen Trai, Q 5, Tp HCM','0908256478','03/04/1974','30/07/2006',280000)
-GO
-insert into KHACHHANG values ('KH03','Tran Ngoc Linh','45, Nguyen Canh Chan, Q 1, Tp HCM','0938776266','12/06/1980','05/08/2006',3860000)
-GO
-insert into KHACHHANG values ('KH04','Tran Minh Long','50/34 Le Dai Hanh, Q 10, Tp HCM','0917325476','09/03/1965','02/10/2006',250000)
-GO
-insert into KHACHHANG values ('KH05','Le Nhat Minh','34, Truong Dinh, Q 3, Tp HCM','08246108','10/03/1950','28/10/2006',21000)
-GO
-insert into KHACHHANG values ('KH06','Le Hoai Thuong','227, Nguyen Van Cu, Q 5, Tp HCM','08631738','31/12/1981','24/11/2006',915000)
-GO
-insert into KHACHHANG values ('KH07','Nguyen Van Tam','32/3, Tran Binh Trong, Q 5, Tp HCM','0916783565','06/04/1971','01/12/2006',12500)
-GO
-insert into KHACHHANG values ('KH08','Phan Thi Thanh','45/2, An Duong Vuong, Q 5, Tp HCM','0938435756','10/01/1971','13/12/2006',365000)
-GO
-insert into KHACHHANG values ('KH09','Le Ha Vinh','873, Le Hong Phong, Q 5, Tp HCM','08654763','03/09/1979','14/01/2007',70000)
-GO
-insert into KHACHHANG values ('KH10','Ha Duy Lap','34/34B, Nguyen Trai, Q 1, Tp HCM','08768904','02/05/1983','16/01/2007',67500)
-GO
-insert into NHANVIEN values ('NV01','Nguyen Nhu Nhut','0927345678','13/04/2006')
-GO
-insert into NHANVIEN values ('NV02','Le Thi Phi Yen','0987567390','21/04/2006')
-GO
-insert into NHANVIEN values ('NV03','Nguyen Van B','0997047382','27/04/2006')
-GO
-insert into NHANVIEN values ('NV04','Ngo Thanh Tuan','0913758498','24/06/2006')
-GO
-insert into NHANVIEN values ('NV05','Nguyen Thi Truc Thanh','0918590387','20/07/2006')
-GO
-insert into SANPHAM values ('BC01','But chi','cay','Singapore',3000)
-GO
-insert into SANPHAM values ('BC02','But chi','cay','Singapore',5000)
-GO
-insert into SANPHAM values ('BC03','But chi','cay','Viet Nam',3500)
-GO
-insert into SANPHAM values ('BC04','But chi','hop','Viet Nam',30000)
-GO
-insert into SANPHAM values ('BB01','But bi','cay','Viet Nam',5000)
-GO
-insert into SANPHAM values ('BB02','But bi','cay','Trung Quoc',7000)
-GO
-insert into SANPHAM values ('BB03','But bi','hop','Thai Lan',100000)
-GO
-insert into SANPHAM values ('TV01','Tap 100 giay mong','quyen','Trung Quoc',2500)
-GO
-insert into SANPHAM values ('TV02','Tap 200 giay mong','quyen','Trung Quoc',4500)
-GO
-insert into SANPHAM values ('TV03','Tap 100 giay tot','quyen','Viet Nam',3000)
-GO
-insert into SANPHAM values ('TV04','Tap 200 giay tot','quyen','Viet Nam',5500)
-GO
-insert into SANPHAM values ('TV05','Tap 100 trang','chuc','Viet Nam',23000)
-GO
-insert into SANPHAM values ('TV06','Tap 200 trang','chuc','Viet Nam',53000)
-GO
-insert into SANPHAM values ('TV07','Tap 100 trang','chuc','Trung Quoc',34000)
-GO
-insert into SANPHAM values ('ST01','So tay 500 trang','quyen','Trung Quoc',40000)
-GO
-insert into SANPHAM values ('ST02','So tay loai 1','quyen','Viet Nam',55000)
-GO
-insert into SANPHAM values ('ST03','So tay loai 2','quyen','Viet Nam',51000)
-GO
-insert into SANPHAM values ('ST04','So tay ','quyen','Thai Lan',55000)
-GO
-insert into SANPHAM values ('ST05','So tay mong','quyen','Thai Lan',20000)
-GO
-insert into SANPHAM values ('ST06','Phan viet bang','hop','Viet Nam',5000)
-GO
-insert into SANPHAM values ('ST07','Phan khong bui','hop','Viet Nam',7000)
-GO
-insert into SANPHAM values ('ST08','Bong bang','cai','Viet Nam',1000)
-GO
-insert into SANPHAM values ('ST09','But long','cay','Viet Nam',5000)
-GO
-insert into SANPHAM values ('ST10','But long','cay','Trung Quoc',7000)
-GO
-insert into HOADON values (1001,'23/07/2006','KH01','NV01',320000)
-GO
-insert into HOADON values (1002,'12/08/2006','KH01','NV02',840000)
-GO
-insert into HOADON values (1003,'23/08/2006','KH02','NV01',100000)
-GO
-insert into HOADON values (1004,'01/09/2006','KH02','NV01',180000)
-GO
-insert into HOADON values (1005,'20/10/2006','KH01','NV02',3800000)
-GO
-insert into HOADON values (1006,'16/10/2006','KH01','NV03',2430000)
-GO
-insert into HOADON values (1007,'28/10/2006','KH03','NV03',510000)
-GO
-insert into HOADON values (1008,'28/10/2006','KH01','NV03',440000)
-GO
-insert into HOADON values (1009,'28/10/2006','KH03','NV04',200000)
-GO
-insert into HOADON values (1010,'01/11/2006','KH01','NV01',5200000)
-GO
-insert into HOADON values (1011,'04/11/2006','KH04','NV03',250000)
-GO
-insert into HOADON values (1012,'30/11/2006','KH05','NV03',21000)
-GO
-insert into HOADON values (1013,'12/12/2006','KH06','NV01',5000)
-GO
-insert into HOADON values (1014,'31/12/2006','KH03','NV02',3150000)
-GO
-insert into HOADON values (1015,'01/01/2007','KH06','NV01',910000)
-GO
-insert into HOADON values (1016,'01/01/2007','KH07','NV02',12500)
-GO
-insert into HOADON values (1017,'02/01/2007','KH08','NV03',35000)
-GO
-insert into HOADON values (1018,'13/01/2007','KH08','NV03',330000)
-GO
-insert into HOADON values (1019,'13/01/2007','KH01','NV03',30000)
-GO
-insert into HOADON values (1020,'14/01/2007','KH09','NV04',70000)
-GO
-insert into HOADON values (1021,'16/01/2007','KH10','NV03',67500)
-GO
-insert into HOADON values (1022,'16/01/2007',null,'NV03',7000)
-GO
-insert into HOADON values (1023,'17/01/2007',null,'NV01',330000)
-GO
-insert into CTHD values (1001,'TV02',10)
-GO
-insert into CTHD values (1001,'ST01',5)
-GO
-insert into CTHD values (1001,'BC01',5)
-GO
-insert into CTHD values (1001,'BC02',10)
-GO
-insert into CTHD values (1001,'ST08',10)
-GO
-insert into CTHD values (1002,'BC04',20)
-GO
-insert into CTHD values (1002,'BB01',20)
-GO
-insert into CTHD values (1002,'BB02',20)
-GO
-insert into CTHD values (1003,'BB03',10)
-GO
-insert into CTHD values (1004,'TV01',20)
-GO
-insert into CTHD values (1004,'TV02',20)
-GO
-insert into CTHD values (1004,'TV03',20)
-GO
-insert into CTHD values (1004,'TV04',20)
-GO
-insert into CTHD values (1005,'TV05',50)
-GO
-insert into CTHD values (1005,'TV06',50)
-GO
-insert into CTHD values (1006,'TV07',20)
-GO
-insert into CTHD values (1006,'ST01',30)
-GO
-insert into CTHD values (1006,'ST02',10)
-GO
-insert into CTHD values (1007,'ST03',10)
-GO
-insert into CTHD values (1008,'ST04',8)
-GO
-insert into CTHD values (1009,'ST05',10)
-GO
-insert into CTHD values (1010,'TV07',50)
-GO
-insert into CTHD values (1010,'ST07',50)
-GO
-insert into CTHD values (1010,'ST08',100)
-GO
-insert into CTHD values (1010,'ST04',50)
-GO
-insert into CTHD values (1010,'TV03',100)
-GO
-insert into CTHD values (1011,'ST06',50)
-GO
-insert into CTHD values (1012,'ST07',3)
-GO
-insert into CTHD values (1013,'ST08',5)
-GO
-insert into CTHD values (1014,'BC02',80)
-GO
-insert into CTHD values (1014,'BB02',100)
-GO
-insert into CTHD values (1014,'BC04',60)
-GO
-insert into CTHD values (1014,'BB01',50)
-GO
-insert into CTHD values (1015,'BB02',30)
-GO
-insert into CTHD values (1015,'BB03',7)
-GO
-insert into CTHD values (1016,'TV01',5)
-GO
-insert into CTHD values (1017,'TV02',1)
-GO
-insert into CTHD values (1017,'TV03',1)
-GO
-insert into CTHD values (1017,'TV04',5)
-GO
-insert into CTHD values (1018,'ST04',6)
-GO
-insert into CTHD values (1019,'ST05',1)
-GO
-insert into CTHD values (1019,'ST06',2)
-GO
-insert into CTHD values (1020,'ST07',10)
-GO
-insert into CTHD values (1021,'ST08',5)
-GO
-insert into CTHD values (1021,'TV01',7)
-GO
-insert into CTHD values (1021,'TV02',10)
-GO
-insert into CTHD values (1022,'ST07',1)
-GO
-insert into CTHD values (1023,'ST04',6)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1001, N'BC01', 5)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1001, N'BC02', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1001, N'ST01', 5)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1001, N'ST08', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1001, N'TV02', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1002, N'BB01', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1002, N'BB02', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1002, N'BC04', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1003, N'BB03', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1004, N'TV01', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1004, N'TV02', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1004, N'TV03', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1004, N'TV04', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1005, N'TV05', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1005, N'TV06', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1006, N'ST01', 30)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1006, N'ST02', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1006, N'TV07', 20)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1007, N'ST03', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1008, N'ST04', 8)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1009, N'ST05', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1010, N'ST04', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1010, N'ST07', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1010, N'ST08', 100)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1010, N'TV03', 100)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1010, N'TV07', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1011, N'ST06', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1012, N'ST07', 3)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1013, N'ST08', 5)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1014, N'BB01', 50)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1014, N'BB02', 100)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1014, N'BC02', 80)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1014, N'BC04', 60)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1015, N'BB02', 30)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1015, N'BB03', 7)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1016, N'TV01', 5)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1017, N'TV02', 1)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1017, N'TV03', 1)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1017, N'TV04', 5)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1018, N'ST04', 6)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1019, N'ST05', 1)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1019, N'ST06', 2)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1020, N'ST07', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1021, N'ST08', 5)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1021, N'TV01', 7)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1021, N'TV02', 10)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1022, N'ST07', 1)
+INSERT [dbo].[CTHD] ([SOHD], [MASP], [SL]) VALUES (1023, N'ST04', 6)
+GO
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1001, CAST(N'2006-07-23T00:00:00' AS SmallDateTime), N'KH01', N'NV01', 320000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1002, CAST(N'2006-08-12T00:00:00' AS SmallDateTime), N'KH01', N'NV02', 840000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1003, CAST(N'2006-08-23T00:00:00' AS SmallDateTime), N'KH02', N'NV01', 100000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1004, CAST(N'2006-09-01T00:00:00' AS SmallDateTime), N'KH02', N'NV01', 180000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1005, CAST(N'2006-10-20T00:00:00' AS SmallDateTime), N'KH01', N'NV02', 3800000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1006, CAST(N'2006-10-16T00:00:00' AS SmallDateTime), N'KH01', N'NV03', 2430000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1007, CAST(N'2006-10-28T00:00:00' AS SmallDateTime), N'KH03', N'NV03', 510000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1008, CAST(N'2006-10-28T00:00:00' AS SmallDateTime), N'KH01', N'NV03', 440000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1009, CAST(N'2006-10-28T00:00:00' AS SmallDateTime), N'KH03', N'NV04', 200000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1010, CAST(N'2006-11-01T00:00:00' AS SmallDateTime), N'KH01', N'NV01', 5200000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1011, CAST(N'2006-11-04T00:00:00' AS SmallDateTime), N'KH04', N'NV03', 250000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1012, CAST(N'2006-11-30T00:00:00' AS SmallDateTime), N'KH05', N'NV03', 21000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1013, CAST(N'2006-12-12T00:00:00' AS SmallDateTime), N'KH06', N'NV01', 5000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1014, CAST(N'2006-12-31T00:00:00' AS SmallDateTime), N'KH03', N'NV02', 3150000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1015, CAST(N'2007-01-01T00:00:00' AS SmallDateTime), N'KH06', N'NV01', 910000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1016, CAST(N'2007-01-01T00:00:00' AS SmallDateTime), N'KH07', N'NV02', 12500.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1017, CAST(N'2007-01-02T00:00:00' AS SmallDateTime), N'KH08', N'NV03', 35000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1018, CAST(N'2007-01-13T00:00:00' AS SmallDateTime), N'KH08', N'NV03', 330000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1019, CAST(N'2007-01-13T00:00:00' AS SmallDateTime), N'KH01', N'NV03', 30000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1020, CAST(N'2007-01-14T00:00:00' AS SmallDateTime), N'KH09', N'NV04', 70000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1021, CAST(N'2007-01-16T00:00:00' AS SmallDateTime), N'KH10', N'NV03', 67500.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1022, CAST(N'2007-01-16T00:00:00' AS SmallDateTime), NULL, N'NV03', 7000.0000)
+INSERT [dbo].[HOADON] ([SOHD], [NGHD], [MAKH], [MANV], [TRIGIA]) VALUES (1023, CAST(N'2007-01-17T00:00:00' AS SmallDateTime), NULL, N'NV01', 330000.0000)
+GO
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH01', N'Nguyen Van A', N'731 Tran Hung Dao, Q5, TpHCM', N'Nguyen Van A', CAST(N'1960-10-22T00:00:00' AS SmallDateTime), 13060000.0000, CAST(N'2006-07-22T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH02', N'Tran Ngoc Han', N'23/5 Nguyen Trai, Q5, TpHCM', N'0908256478', CAST(N'1974-04-03T00:00:00' AS SmallDateTime), 280000.0000, CAST(N'2006-07-30T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH03', N'Tran Ngoc Linh', N'45 Nguyen Canh Chan, Q1, TpHCM', N'0938776266', CAST(N'1980-06-12T00:00:00' AS SmallDateTime), 3860000.0000, CAST(N'2006-08-05T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH04', N'Tran Minh Long', N'50/34 Le Dai Hanh, Q10, TpHCM', N'0917325476', CAST(N'1965-03-09T00:00:00' AS SmallDateTime), 250000.0000, CAST(N'2006-10-02T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH05', N'Le Nhat Minh ', N'34 Truong Dinh, Q3, TpHCM', N'08246108', CAST(N'1950-10-03T00:00:00' AS SmallDateTime), 21000.0000, CAST(N'2006-10-28T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH06', N'Le Hoai Thuong', N'227 Nguyen Van Cu, Q5, TpHCM', N'08631738', CAST(N'1981-12-31T00:00:00' AS SmallDateTime), 915000.0000, CAST(N'2006-11-24T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH07', N'Nguyen Van Tam', N'32/3 Tran Binh Trong, Q5, TpHCM', N'0916783565', CAST(N'1971-04-06T00:00:00' AS SmallDateTime), 12500.0000, CAST(N'2006-12-01T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH08', N'Pham Thi Thanh', N'45/2 An Duong Vuong, Q5, TpHCM', N'0938435756', CAST(N'1971-01-10T00:00:00' AS SmallDateTime), 365000.0000, CAST(N'2006-12-13T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH09', N'Le Ha Vinh', N'873 Le Hong Phong, Q', N'NULL08654763', CAST(N'1979-09-03T00:00:00' AS SmallDateTime), 70000.0000, CAST(N'2007-01-14T00:00:00' AS SmallDateTime), NULL)
+INSERT [dbo].[KHACHHANG] ([MAKH], [HOTEN], [DCHI], [SODT], [NGSINH], [DOANHSO], [NGDK], [LOAIKH]) VALUES (N'KH10', N'Ha Duy Lap', N'34/34B Nguyen Trai, Q1, TpHCM', N'08768904', CAST(N'1983-05-02T00:00:00' AS SmallDateTime), 67500.0000, CAST(N'2007-01-16T00:00:00' AS SmallDateTime), NULL)
+GO
+INSERT [dbo].[NHANVIEN] ([MANV], [HOTEN], [NGVL], [SODT]) VALUES (N'NV01', N'Nguyen Nhu Nhut', CAST(N'2006-04-13T00:00:00' AS SmallDateTime), N'0927345678')
+INSERT [dbo].[NHANVIEN] ([MANV], [HOTEN], [NGVL], [SODT]) VALUES (N'NV02', N'Le Thi Phi Yen', CAST(N'2006-04-21T00:00:00' AS SmallDateTime), N'0987567390')
+INSERT [dbo].[NHANVIEN] ([MANV], [HOTEN], [NGVL], [SODT]) VALUES (N'NV03', N'Nguyen Van B', CAST(N'2006-04-27T00:00:00' AS SmallDateTime), N'0997047382')
+INSERT [dbo].[NHANVIEN] ([MANV], [HOTEN], [NGVL], [SODT]) VALUES (N'NV04', N'Ngo Thanh Tuan', CAST(N'2006-06-24T00:00:00' AS SmallDateTime), N'0913758498')
+INSERT [dbo].[NHANVIEN] ([MANV], [HOTEN], [NGVL], [SODT]) VALUES (N'NV05', N'Nguyen Thi Truc Anh', CAST(N'2006-07-20T00:00:00' AS SmallDateTime), N'0918590387')
+GO
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BB01', N'But bi', N'cay', N'Viet Nam', 5000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BB02', N'But bi', N'cay', N'Trung Quoc', 7000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BB03', N'But bi', N'hop', N'Thai Lan', 100000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BC01', N'But chi', N'cay', N'Singapore', 3000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BC02', N'But chi', N'cay ', N'Singapore', 5000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BC03', N'But chi', N'cay', N'Viet Nam', 3500.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'BC04', N'But chi ', N'hop', N'Viet Nam', 30000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST01', N'So tay 500 trang', N'quyen', N'Trung Quoc', 40000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST02', N'So tay loai 1', N'quyen', N'Viet Nam ', 55000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST03', N'So tay loai 2', N'quyen', N'Viet Nam', 51000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST04', N'So tay', N'quyen ', N'Thai Lan', 55000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST05', N'So tay mong', N'quyen', N'Thai Lan', 20000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST06', N'Phan viet bang', N'hop', N'Viet Nam', 5000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST07', N'Phan khong bui', N'hop', N'Viet Nam', 7000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST08', N'Bong bang', N'cai', N'Viet Nam', 1000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST09', N'But long', N'cay', N'Viet Nam', 5000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'ST10', N'But long', N'cay', N'Trung Quoc', 7000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV01', N'Tap 100 giay mong', N'quyen', N'Trung Quoc', 2500.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV02', N'Tap 200 giay mong', N'quyen', N'Trung Quoc', 4500.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV03', N'Tap 100 giay tot', N'quyen', N'Viet Nam', 3000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV04', N'Tap 200 giay tot', N'quyen', N'Viet Nam', 5500.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV05', N'Tap 100 trang', N'chuc', N'Viet Nam', 23000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV06', N'Tap 200 trang', N'chuc', N'Viet Nam', 53000.0000)
+INSERT [dbo].[SANPHAM] ([MASP], [TENSP], [DVT], [NUOCSX], [GIA]) VALUES (N'TV07', N'Tap 100 trang', N'chuc ', N'Trung Quoc', 34000.0000)
 GO
