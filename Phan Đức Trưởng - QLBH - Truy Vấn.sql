@@ -56,7 +56,7 @@ WHERE A.MAKH = B.MAKH AND NGHD = '1/1/2007'
 -- 3.9 In ra số hóa đơn, trị giá các hóa đơn do nhân viên có tên “Nguyen Van B” lập trong ngày 28/10/2006.
 SELECT SOHD , TRIGIA 
 FROM HOADON A , NHANVIEN B
-WHERE A.MANV = B.MANV AND HOTEN = 'Nguyen Van B' AND NGHD = '10/28/2006'*/
+WHERE A.MANV = B.MANV AND HOTEN = 'Nguyen Van B' AND NGHD = '10/28/2006'
 -- 3.10 In ra danh sách các sản phẩm (MASP,TENSP) được khách hàng có tên “Nguyen Van A” mua trong tháng 10/2006.
 SELECT SANPHAM.MASP , TENSP
 FROM (KHACHHANG JOIN HOADON ON KHACHHANG.MAKH = HOADON.MAKH) JOIN ( SANPHAM JOIN CTHD ON SANPHAM.MASP = CTHD.MASP ) ON HOADON.SOHD = CTHD.SOHD
