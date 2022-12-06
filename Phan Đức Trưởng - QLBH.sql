@@ -65,6 +65,9 @@ GO
 --Giá bán của sản phẩm từ 500 đồng trở lên.
 ALTER TABLE SANPHAM ADD CONSTRAINT CHECK_GIA CHECK(GIA>=500)
 GO
+--Mỗi lần mua hàng, khách hàng phải mua ít nhất 1 sản phẩm.
+ALTER TABLE CTHD ADD CONSTRAINT CHECK_MUA CHECK (SL>0)
+GO
 --Ngày khách hàng đăng ký là khách hàng thành viên phải lớn hơn ngày sinh của người đó.
 ALTER TABLE KHACHHANG ADD CONSTRAINT CHECK_NGDK CHECK (NGDK>NGSINH)
 GO
