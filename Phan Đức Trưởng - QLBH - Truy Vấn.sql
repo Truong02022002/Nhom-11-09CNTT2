@@ -40,3 +40,24 @@ WHERE NUOCSX = 'Trung Quoc' AND GIA BETWEEN 30000 AND 40000
 SELECT MASP,TENSP
 FROM SANPHAM
 WHERE (NUOCSX ='Trung Quoc' OR NUOCSX = 'Thai Lan') AND GIA BETWEEN 30000 AND 40000
+-- 3.6 In ra các số hóa đơn, trị giá hóa đơn bán ra trong ngày 1/1/2007 và ngày 2/1/2007.
+SELECT SOHD,TRIGIA
+FROM HOADON
+WHERE NGHD IN ('01/01/2007','02/01/2007')
+-- 3.7 In ra các số hóa đơn, trị giá hóa đơn trong tháng 1/2007, sắp xếp theo ngày (tăng dần) và trị giá của hóa đơn (giảm dần).
+SELECT SOHD,TRIGIA , NGHD
+FROM HOADON
+WHERE YEAR(NGHD) = '2007' AND MONTH(NGHD) = '01'
+ORDER BY NGHD ASC , TRIGIA DESC
+--3.8 In ra danh sách các khách hàng (MAKH, HOTEN) đã mua hàng trong ngày 1/1/2007.
+SELECT A.MAKH , HOTEN 
+FROM KHACHHANG A, HOADON B
+WHERE A.MAKH = B.MAKH AND NGHD = '1/1/2007'
+-- 3.9 In ra số hóa đơn, trị giá các hóa đơn do nhân viên có tên “Nguyen Van B” lập trong ngày 28/10/2006.
+SELECT SOHD , TRIGIA 
+FROM HOADON A , NHANVIEN B
+WHERE A.MANV = B.MANV AND HOTEN = 'Nguyen Van B' AND NGHD = '10/28/2006'*/
+-- 3.10 In ra danh sách các sản phẩm (MASP,TENSP) được khách hàng có tên “Nguyen Van A” mua trong tháng 10/2006.
+SELECT SANPHAM.MASP , TENSP
+FROM (KHACHHANG JOIN HOADON ON KHACHHANG.MAKH = HOADON.MAKH) JOIN ( SANPHAM JOIN CTHD ON SANPHAM.MASP = CTHD.MASP ) ON HOADON.SOHD = CTHD.SOHD
+WHERE HOTEN = 'Nguyen Van A' AND MONTH(NGHD)= 10 AND YEAR(NGHD) = 2006
