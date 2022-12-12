@@ -80,3 +80,98 @@ WHERE NUOCSX ='Trung Quoc' OR NGAYHD = '1/1/2007'
 SELECT SANPHAM.MASP , TENSP FROM SANPHAM 
 WHERE NOT EXISTS (SELECT MASP FROM CTHD 
 WHERE SANPHAM.MASP = CTHD.MASP)
+-- 3.16: In ra danh sách các sản phẩm (MASP,TENSP) không bán được trong năm 2006.
+SELECT C.MASP , TENSP
+FROM SANPHAM C
+WHERE NOT EXISTS (
+	SELECT MASP
+	FROM CTHD JOIN HOADON ON CTHD.SOHD = HOADON.SOHD
+	WHERE C.MASP = CTHD.MASP AND YEAR(HOADON.NGHD) = 2006
+	) 
+-- 3.17: In ra danh sách các sản phẩm (MASP,TENSP) do “Trung Quoc” sản xuất không bán được trong năm 2006.
+SELECT C.MASP , TENSP
+FROM SANPHAM C
+WHERE NUOCSX = 'Trung Quoc' AND NOT EXISTS (
+	SELECT MASP
+	FROM CTHD JOIN HOADON ON CTHD.SOHD = HOADON.SOHD
+	WHERE C.MASP = CTHD.MASP AND YEAR(HOADON.NGHD) = 2006
+	) 
+-- 3.18: Tìm số hóa đơn đã mua tất cả các sản phẩm do Singapore sản xuất.
+select SOHD
+from HOADON 
+where not exists ( 
+			select MASP
+			from SANPHAM
+			where nuocsx= 'Singapore' and not exists (
+				select SOHD
+				from CTHD 
+				where HOADON.sohd=CTHD.sohd and CTHD.masp=SANPHAM.masp) )
+-- 3.19: Tìm số hóa đơn trong năm 2006 đã mua ít nhất tất cả các sản phẩm do Singapore sản xuất.
+SELECT A.SOHD ,SOLAN
+FROM HOADON A JOIN (SELECT MIN(SL) SOLAN 
+					FROM HOADON HD JOIN (
+							SELECT HOADON.SOHD , COUNT(*) SL
+							FROM (CTHD JOIN HOADON ON CTHD.SOHD = HOADON.SOHD ) JOIN SANPHAM ON SANPHAM.MASP =CTHD.MASP 
+							WHERE NUOCSX = 'Singapore' AND YEAR(NGHD) = 2006 
+							GROUP BY HOADON.SOHD) TABLE1 
+								ON TABLE1.SOHD = HD.SOHD 
+					) TABLE2 
+						ON A.SOHD = TABLE2.SOHD
+					
+
+SELECT  COUNT (*) AS SOLANMUA 
+FROM (CTHD JOIN HOADON ON CTHD.SOHD = HOADON.SOHD ) JOIN SANPHAM ON SANPHAM.MASP = CTHD.MASP
+WHERE NUOCSX = 'Singapore'  AND YEAR(NGHD) = 2006
+-- 3.20: Có bao nhiêu hóa đơn không phải của khách hàng đăng ký thành viên mua?
+SELECT COUNT(*) AS SOHOADONKHONGPHAIDOTHANHVIENMUA
+FROM HOADON
+WHERE MAKH IS NULL
+-- 3.21: Có bao nhiêu sản phẩm khác nhau được bán ra trong năm 2006.
+SELECT COUNT(DISTINCT MASP)
+FROM HOADON JOIN CTHD ON HOADON.SOHD = CTHD.SOHD
+WHERE YEAR(NGHD) = 2006
+-- 3.22: Cho biết trị giá hóa đơn cao nhất, thấp nhất là bao nhiêu ?
+SELECT MIN(TRIGIA) AS THAPNHAT , MAX (TRIGIA) AS CAONHAT
+FROM HOADON
+-- 3.23: Trị giá trung bình của tất cả các hóa đơn được bán ra trong năm 2006 là bao nhiêu?
+SELECT AVG(TRIGIA) AS TRUNGBINH2006
+FROM HOADON
+WHERE YEAR(NGHD) ='2006'
+-- 3.24: Tính doanh thu bán hàng trong năm 2006.
+SELECT SUM(TRIGIA) AS DOANHTHU
+FROM HOADON
+WHERE YEAR(NGHD) = 2006
+-- 3.25: Tìm số hóa đơn có trị giá cao nhất trong năm 2006.
+SELECT SOHD
+FROM HOADON
+WHERE TRIGIA= (SELECT MAX(TRIGIA) FROM HOADON WHERE YEAR(NGHD) =2006 )
+-- 3.26: Tìm họ tên khách hàng đã mua hóa đơn có trị giá cao nhất trong năm 2006.
+SELECT HOTEN
+FROM HOADON JOIN KHACHHANG ON HOADON.MAKH = KHACHHANG.MAKH
+WHERE TRIGIA = (SELECT MAX(TRIGIA) FROM HOADON WHERE YEAR (NGHD)=2006)
+-- 3.27: In ra danh sách 3 khách hàng (MAKH, HOTEN) có doanh số cao nhất.
+SELECT TOP 3 MAKH , HOTEN
+FROM KHACHHANG
+ORDER BY DOANHSO DESC
+-- 3.28: In ra danh sách các sản phẩm (MASP, TENSP) có giá bán bằng 1 trong 3 mức giá cao nhất.
+SELECT MASP ,TENSP
+FROM SANPHAM
+WHERE GIA IN (
+	SELECT TOP 3 GIA
+	FROM SANPHAM
+	ORDER BY GIA DESC)
+-- 3.29: In ra danh sách các sản phẩm (MASP, TENSP) do “Thai Lan” sản xuất có giá bằng 1 trong 3 mức giá cao nhất (của tất cả các sản phẩm).
+SELECT MASP , TENSP
+FROM SANPHAM
+WHERE NUOCSX = 'Thai Lan' AND GIA IN (
+						SELECT TOP 3 GIA 
+						FROM SANPHAM 
+						ORDER BY GIA DESC )
+-- 3.30: In ra danh sách các sản phẩm (MASP, TENSP) do “Trung Quoc” sản xuất có giá bằng 1 trong 3 mức giá cao nhất (của sản phẩm do “Trung Quoc” sản xuất).
+SELECT MASP , TENSP
+FROM SANPHAM
+WHERE NUOCSX ='Trung Quoc' AND GIA IN (
+									SELECT TOP 3 GIA
+									FROM SANPHAM
+									WHERE NUOCSX ='Trung Quoc'
+									ORDER BY GIA DESC )
