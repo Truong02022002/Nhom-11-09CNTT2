@@ -165,3 +165,23 @@ WHERE NUOCSX ='Trung Quoc' AND GIA IN (
 									FROM SANPHAM
 									WHERE NUOCSX ='Trung Quoc'
 									ORDER BY GIA DESC )
+--31.	* In ra danh sách 3 khách hàng có doanh số cao nhất (sắp xếp theo kiểu xếp hạng).
+SELECT TOP 3 MAKH, HOTEN
+FROM KHACHHANG
+ORDER BY DOANHSO DESC
+--32.	Tính tổng số sản phẩm do “Trung Quoc” sản xuất.
+SELECT COUNT(DISTINCT MASP)
+FROM SANPHAM
+WHERE NUOCSX = 'TRUNG QUOC'
+--33.	Tính tổng số sản phẩm của từng nước sản xuất.
+SELECT NUOCSX, COUNT(DISTINCT MASP) AS TONGSOSANPHAM
+FROM SANPHAM
+GROUP BY NUOCSX
+--34.	Với từng nước sản xuất, tìm giá bán cao nhất, thấp nhất, trung bình của các sản phẩm.
+SELECT NUOCSX, MAX(GIA) AS MAX, MIN(GIA) AS MIN, AVG(GIA) AS AVG
+FROM SANPHAM
+GROUP BY NUOCSX
+--35.	Tính doanh thu bán hàng mỗi ngày.
+SELECT NGHD, SUM(TRIGIA) AS DOANHTHU
+FROM HOADON
+GROUP BY NGHD
